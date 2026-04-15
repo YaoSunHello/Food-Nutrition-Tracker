@@ -1,4 +1,4 @@
-const API_KEY = 'DEMO_KEY';
+const API_KEY = 'ezouRzBhd2Zdw7QvTitOBxoEuBki8TikaACvCG2q';
 const BASE_URL = 'https://api.nal.usda.gov/fdc/v1';
 
 // USDA nutrient IDs for the columns we care about
