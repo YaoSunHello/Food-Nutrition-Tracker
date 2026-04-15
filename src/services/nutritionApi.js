@@ -1,4 +1,4 @@
-const API_KEY = 'DEMO_KEY';
+const API_KEY = 'ezouRzBhd2Zdw7QvTitOBxoEuBki8TikaACvCG2q';
 const BASE_URL = 'https://api.nal.usda.gov/fdc/v1';
 
 // USDA nutrient IDs for the columns we care about
@@ -26,7 +26,7 @@ export async function searchFood(query) {
 
   if (!response.ok) {
     if (response.status === 429) {
-      throw new Error('API rate limit reached (DEMO_KEY allows 30 requests/hour). Please try again later.');
+      throw new Error('API rate limit reached. Please try again later.');
     }
     throw new Error(`API error: ${response.status}`);
   }
