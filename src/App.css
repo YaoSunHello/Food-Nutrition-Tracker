@@ -1,0 +1,239 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #f5f7fa;
+  color: #1a1a2e;
+  min-height: 100vh;
+}
+
+/* ── Layout ─────────────────────────────────────────── */
+
+.app {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem 3rem;
+}
+
+.app-header {
+  padding: 2rem 0 1.5rem;
+  border-bottom: 2px solid #e2e8f0;
+  margin-bottom: 1.75rem;
+}
+
+.app-header h1 {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #2d6a4f;
+}
+
+.app-subtitle {
+  margin-top: 0.35rem;
+  color: #64748b;
+  font-size: 0.95rem;
+}
+
+.app-main {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.app-footer {
+  margin-top: 2.5rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+
+.app-footer a {
+  color: #2d6a4f;
+  text-decoration: none;
+}
+
+.app-footer a:hover {
+  text-decoration: underline;
+}
+
+/* ── Food Form ───────────────────────────────────────── */
+
+.food-form {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+.food-form__inputs {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.food-form__text {
+  flex: 1 1 260px;
+  padding: 0.6rem 0.9rem;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.food-form__text:focus {
+  border-color: #2d6a4f;
+}
+
+.food-form__portion {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.food-form__grams {
+  width: 90px;
+  padding: 0.6rem 0.75rem;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  outline: none;
+  text-align: right;
+  transition: border-color 0.15s;
+}
+
+.food-form__grams:focus {
+  border-color: #2d6a4f;
+}
+
+.food-form__unit {
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+.food-form__btn {
+  padding: 0.6rem 1.4rem;
+  background: #2d6a4f;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, opacity 0.15s;
+  white-space: nowrap;
+}
+
+.food-form__btn:hover:not(:disabled) {
+  background: #1b4332;
+}
+
+.food-form__btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.food-form__error {
+  margin-top: 0.65rem;
+  color: #dc2626;
+  font-size: 0.88rem;
+}
+
+/* ── Nutrition Table ─────────────────────────────────── */
+
+.table-empty {
+  text-align: center;
+  color: #94a3b8;
+  font-size: 0.95rem;
+  padding: 2.5rem 1rem;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+.nutrition-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  font-size: 0.9rem;
+}
+
+.nutrition-table thead th {
+  background: #2d6a4f;
+  color: #ffffff;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.82rem;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  position: sticky;
+  top: 0;
+}
+
+.nutrition-table tbody tr:nth-child(even) {
+  background: #f8fafc;
+}
+
+.nutrition-table tbody tr:hover {
+  background: #ecfdf5;
+}
+
+.nutrition-table td {
+  padding: 0.65rem 1rem;
+  border-bottom: 1px solid #e2e8f0;
+  vertical-align: middle;
+}
+
+.col-name {
+  font-weight: 500;
+  min-width: 180px;
+}
+
+.col-num {
+  text-align: right;
+  white-space: nowrap;
+  min-width: 80px;
+}
+
+.col-minerals {
+  color: #475569;
+  font-size: 0.82rem;
+  min-width: 200px;
+}
+
+/* Totals row */
+.totals-row td {
+  border-top: 2px solid #2d6a4f;
+  border-bottom: none;
+  background: #f0fdf4;
+  padding: 0.75rem 1rem;
+}
+
+/* Remove button */
+.btn-remove {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  font-size: 1.15rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0.1rem 0.3rem;
+  border-radius: 4px;
+  transition: color 0.12s, background 0.12s;
+}
+
+.btn-remove:hover {
+  color: #dc2626;
+  background: #fee2e2;
+}
