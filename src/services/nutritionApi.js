@@ -26,7 +26,7 @@ export async function searchFood(query) {
 
   if (!response.ok) {
     if (response.status === 429) {
-      throw new Error('API rate limit reached (DEMO_KEY allows 30 requests/hour). Please try again later.');
+      throw new Error('API rate limit reached. Please try again later.');
     }
     throw new Error(`API error: ${response.status}`);
   }
