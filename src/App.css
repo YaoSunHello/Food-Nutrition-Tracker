@@ -43,6 +43,160 @@ body {
   gap: 1.75rem;
 }
 
+/* ── Two-panel input layout ──────────────────────────── */
+
+.input-sections {
+  display: flex;
+  gap: 1.25rem;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+.input-section {
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.input-section__title {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #64748b;
+}
+
+.input-divider {
+  display: flex;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #94a3b8;
+  font-weight: 500;
+  padding: 0 0.25rem;
+}
+
+/* ── Natural Input ───────────────────────────────────── */
+
+.natural-input {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  flex: 1;
+}
+
+.natural-input__header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.natural-input__label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.natural-input__hint {
+  font-size: 0.78rem;
+  color: #94a3b8;
+}
+
+.natural-input__row {
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+}
+
+.natural-input__textarea {
+  flex: 1;
+  padding: 0.6rem 0.9rem;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 0.92rem;
+  font-family: inherit;
+  resize: vertical;
+  outline: none;
+  transition: border-color 0.15s;
+  line-height: 1.5;
+}
+
+.natural-input__textarea:focus {
+  border-color: #2d6a4f;
+}
+
+.natural-input__mic {
+  width: 44px;
+  height: 44px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 8px;
+  background: #ffffff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.natural-input__mic:hover:not(:disabled) {
+  background: #f0fdf4;
+  border-color: #2d6a4f;
+}
+
+.natural-input__mic--active {
+  background: #fee2e2;
+  border-color: #dc2626;
+  animation: pulse 1.2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.55; }
+}
+
+.natural-input__listening {
+  font-size: 0.83rem;
+  color: #dc2626;
+  font-weight: 500;
+}
+
+.natural-input__status {
+  font-size: 0.83rem;
+  color: #2d6a4f;
+}
+
+.natural-input__error {
+  font-size: 0.83rem;
+  color: #dc2626;
+}
+
+.natural-input__btn {
+  align-self: flex-start;
+  padding: 0.6rem 1.4rem;
+  background: #2d6a4f;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, opacity 0.15s;
+}
+
+.natural-input__btn:hover:not(:disabled) {
+  background: #1b4332;
+}
+
+.natural-input__btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 .app-footer {
   margin-top: 2.5rem;
   text-align: center;

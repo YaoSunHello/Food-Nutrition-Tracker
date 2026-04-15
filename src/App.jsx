@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import FoodForm from './components/FoodForm.jsx';
+import NaturalInput from './components/NaturalInput.jsx';
 import NutritionTable from './components/NutritionTable.jsx';
 
 export default function App() {
@@ -7,6 +8,10 @@ export default function App() {
 
   function addFood(entry) {
     setFoodList((prev) => [...prev, entry]);
+  }
+
+  function addMultiple(entries) {
+    setFoodList((prev) => [...prev, ...entries]);
   }
 
   function removeFood(id) {
@@ -18,12 +23,22 @@ export default function App() {
       <header className="app-header">
         <h1>Food Nutrition Tracker</h1>
         <p className="app-subtitle">
-          Enter a food and portion size to log its nutritional content.
+          Log food by name, or describe your whole meal by voice or text.
         </p>
       </header>
 
       <main className="app-main">
-        <FoodForm onAdd={addFood} />
+        <div className="input-sections">
+          <div className="input-section">
+            <h2 className="input-section__title">Single food</h2>
+            <FoodForm onAdd={addFood} />
+          </div>
+          <div className="input-divider">or</div>
+          <div className="input-section">
+            <h2 className="input-section__title">Voice / describe your meal</h2>
+            <NaturalInput onAddMultiple={addMultiple} />
+          </div>
+        </div>
         <NutritionTable foodList={foodList} onRemove={removeFood} />
       </main>
 
